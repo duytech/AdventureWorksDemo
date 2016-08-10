@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\PersonRepo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Entities\Address.cs">
       <DependentUpon>AW.tt</DependentUpon>
