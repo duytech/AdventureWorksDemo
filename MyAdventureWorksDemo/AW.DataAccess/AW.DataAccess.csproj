@@ -51,8 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\PersonRepo.cs" />
-    <Compile Include="Repository.cs" />
     <Compile Include="Entities\Address.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -113,19 +111,7 @@
     <Compile Include="Entities\Customer.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\customerAccessPredicate_Result.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\CustomerPII.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\DatabaseLog.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\DemoSalesOrderDetailSeed.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\DemoSalesOrderHeaderSeed.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Department.cs">
@@ -143,12 +129,6 @@
     <Compile Include="Entities\EmployeePayHistory.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Employee_Temporal.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Employee_Temporal_History.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\ErrorLog.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -161,9 +141,6 @@
     <Compile Include="Entities\Location.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\OrderTracking.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\Password.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -174,15 +151,6 @@
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\PersonPhone.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Person_json.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Person_Temporal.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Person_Temporal_History.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\PhoneNumberType.cs">
@@ -233,12 +201,6 @@
     <Compile Include="Entities\ProductVendor.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Product_inmem.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Product_ondisk.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\PurchaseOrderDetail.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -248,25 +210,10 @@
     <Compile Include="Entities\SalesOrderDetail.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SalesOrderDetail_inmem.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesOrderDetail_ondisk.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\SalesOrderHeader.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\SalesOrderHeaderSalesReason.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesOrderHeader_inmem.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesOrderHeader_ondisk.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SalesOrder_json.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\SalesPerson.cs">
@@ -305,28 +252,10 @@
     <Compile Include="Entities\SpecialOfferProduct.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\SpecialOfferProduct_inmem.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SpecialOfferProduct_ondisk.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SpecialOffer_inmem.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SpecialOffer_ondisk.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sp_GetEmployee_Person_Info_AsOf_Result.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\StateProvince.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Store.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\TrackingEvent.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\TransactionHistory.cs">
@@ -350,12 +279,6 @@
     <Compile Include="Entities\uspGetManagerEmployees_Result.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\uspGetOrderTrackingBySalesOrderID_Result.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\uspGetOrderTrackingByTrackingNumber_Result.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\uspGetWhereUsedProductID_Result.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -369,9 +292,6 @@
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\vEmployeeDepartmentHistory.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\vEmployeePersonTemporalInfo.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Vendor.cs">
@@ -399,12 +319,6 @@
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\vProductModelInstruction.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\vSalesOrderDetail_extended_inmem_Result.cs">
-      <DependentUpon>AW.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\vSalesOrderHeader_extended_inmem_Result.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\vSalesPerson.cs">
@@ -437,37 +351,37 @@
     <Compile Include="Entities\WorkOrderRouting.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\PersonRepo.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="Interfaces\IPersonRepo.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Entities\AW.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AW.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Entities\AW.edmx.diagram">
       <DependentUpon>AW.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Entities\AW.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AW.Context.cs</LastGenOutput>
       <DependentUpon>AW.edmx</DependentUpon>
+      <LastGenOutput>AW.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\AW.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AW.edmx</DependentUpon>
       <LastGenOutput>AW.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
