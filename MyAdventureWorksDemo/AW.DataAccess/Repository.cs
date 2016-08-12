@@ -18,12 +18,12 @@
 
         public virtual void Create(T entity)
         {
-            throw new NotImplementedException();
+            _dbset.Add(entity);
         }
 
         public virtual void Update(T entity)
         {
-            throw new NotImplementedException();
+            _entities.Entry(entity).State = EntityState.Modified;
         }
 
         public virtual void Delete(T entity)
@@ -38,7 +38,7 @@
 
         public virtual T GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _dbset.Find(id);
         }
 
         public virtual T GetFirst(Expression<Func<T, bool>> where)
