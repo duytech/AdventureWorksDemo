@@ -1,5 +1,6 @@
 ﻿namespace AW.DataAccess.Implementations
 {
+    using Common;
     using Entities;
     using Interfaces;
     using System.Data.Entity;

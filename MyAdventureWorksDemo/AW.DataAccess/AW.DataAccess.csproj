@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\IUnitOfWork.cs" />
+    <Compile Include="Common\UnitOfWork.cs" />
     <Compile Include="Entities\Address.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
@@ -352,9 +354,9 @@
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
     <Compile Include="Implementations\PersonRepo.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="Common\Repository.cs" />
     <Compile Include="Interfaces\IPersonRepo.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Common\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

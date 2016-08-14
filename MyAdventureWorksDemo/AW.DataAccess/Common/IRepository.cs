@@ -1,4 +1,4 @@
-﻿namespace AW.DataAccess.Interfaces
+﻿namespace AW.DataAccess.Common
 {
     using System;
     using System.Collections.Generic;
@@ -18,7 +18,7 @@
 
         T GetFirst(Expression<Func<T, bool>> where);
 
-        IEnumerable<T> GetAll(int? pageIndex, int? pageSize);
+        IEnumerable<T> GetAll(int pageIndex, int pageSize);
 
         IEnumerable<T> GetList(Expression<Func<T, bool>> where);
     }

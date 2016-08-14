@@ -1,13 +1,8 @@
-﻿using AW.DataAccess.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AW.DataAccess.Interfaces
+﻿namespace AW.DataAccess.Interfaces
 {
-    using AW.DataAccess.Entities;
+    using Entities;
+    using Common;
+
     public interface IPersonRepo : IRepository<Person>
     {
 
