@@ -9,3 +9,5 @@ MyAdventureWorksDemo/AW.Bussiness/obj/
 MyAdventureWorksDemo/AW.Bussiness/bin/
 MyAdventureWorksDemo/.vs/
 MyAdventureWorksDemo/AW.WebAPI/AW.WebAPI.csproj.user
+MyAdventureWorksDemo/AW.Models/obj/Debug/
+MyAdventureWorksDemo/AW.Models/bin/Debug/

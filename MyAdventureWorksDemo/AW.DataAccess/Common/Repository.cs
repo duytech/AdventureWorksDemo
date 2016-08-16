@@ -11,13 +11,14 @@
 
     public abstract class Repository<T> where T : class
     {
-        private DbContext _entities;
+        private IAWDbFactory _entities;
         private readonly IDbSet<T> _dbset;
 
-        public Repository(DbContext context)
+        public Repository(IAWDbFactory context)
         {
+            //context.GetDb().Configuration.ProxyCreationEnabled = false;
             _entities = context;
-            _dbset = context.Set<T>();
+            _dbset = context.GetDb().Set<T>();
         }
 
         public virtual void Create(T entity)
@@ -28,7 +29,7 @@
         public virtual void Update(T entity)
         {
             _dbset.Attach(entity);
-            _entities.Entry(entity).State = EntityState.Modified;
+            _entities.GetDb().Entry(entity).State = EntityState.Modified;
         }
 
         public virtual void Delete(int id)
@@ -39,7 +40,7 @@
 
         public virtual void Delete(T entity)
         {
-            if (_entities.Entry(entity).State == EntityState.Detached)
+            if (_entities.GetDb().Entry(entity).State == EntityState.Detached)
             {
                 _dbset.Attach(entity);
             }
@@ -57,27 +58,35 @@
             var objectQuery = internalQuery.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where(field => field.Name == "_objectQuery").Select(field => field.GetValue(internalQuery)).First() as ObjectQuery;
             var parameters = objectQuery.Parameters.Select(p => new SqlParameter(p.Name, p.Value)).ToArray();
 
-            _entities.Database.ExecuteSqlCommand(deleteSql, parameters);
+            _entities.GetDb().Database.ExecuteSqlCommand(deleteSql, parameters);
         }
 
-        public virtual T GetById(Guid id)
+        public virtual T GetById(int id)
         {
-            return _dbset.Find(id);
+            var result = _dbset.Find(id);
+            _entities.GetDb().SaveChanges();
+            return result;
         }
 
         public virtual T GetFirst(Expression<Func<T, bool>> where)
         {
-            throw new NotImplementedException();
+            return _dbset.Where(where).First();
         }
 
-        public virtual IEnumerable<T> GetAll(int pageIndex, int pageSize)
+        public virtual IEnumerable<T> GetAllWithPaging(int pageIndex, int pageSize)
         {
-            return _dbset.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+            return _dbset.Skip(pageIndex * pageSize).Take(pageSize).AsEnumerable();
+        }
+
+        public virtual IEnumerable<T> GetAll()
+        {
+            return _dbset.ToList();
         }
 
         public virtual IEnumerable<T> GetList(Expression<Func<T, bool>> where)
         {
-            return _dbset.Where(where);
+            var r = _dbset.Where(where).ToList();
+            return r;
         }
     }
 }

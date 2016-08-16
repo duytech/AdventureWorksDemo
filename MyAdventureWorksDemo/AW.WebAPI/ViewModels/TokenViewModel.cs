@@ -5,7 +5,7 @@
     public class TokenViewModel
     {
         public string AccessToken { get; set; }
-        public IList<string> Groups { get; set; }
+        public string UserName { get; set; }
         public string Issued { get; set; }
         public string Expires { get; set; }
     }

@@ -1,5 +1,6 @@
 ﻿namespace AW.WebAPI.Controllers
 {
+    #region Using
     using Common.Constants;
     using Common.Helpers;
     using Jose;
@@ -9,9 +10,11 @@
     using System.Net.Http;
     using System.Web.Http;
     using ViewModels;
+    #endregion
 
     public class AccountController : ApiController
     {
+        [Route("api/account/login")]
         [HttpPost]
         public HttpResponseMessage Login(LoginViewModel login)
         {
@@ -34,8 +37,9 @@
             var token = new TokenViewModel
             {
                 AccessToken = tokenString,
+                UserName = login.UserName,
                 Issued = currentDate.ToString("MMM d yyyy HH:mm:ss"),
-                Expires = currentDate.AddHours(24).ToString("MMM d yyyy HH:mm:ss")
+                Expires = currentDate.AddHours(ConfigurationHelper.TokenExpiryTime).ToString("MMM d yyyy HH:mm:ss")
             };
 
             return Request.CreateResponse(HttpStatusCode.OK, token);

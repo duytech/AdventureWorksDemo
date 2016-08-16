@@ -14,11 +14,13 @@
 
         void Delete(Expression<Func<T, bool>> where);
 
-        T GetById(Guid id);
+        T GetById(int id);
 
         T GetFirst(Expression<Func<T, bool>> where);
 
-        IEnumerable<T> GetAll(int pageIndex, int pageSize);
+        IEnumerable<T> GetAllWithPaging(int pageIndex, int pageSize);
+
+        IEnumerable<T> GetAll();
 
         IEnumerable<T> GetList(Expression<Func<T, bool>> where);
     }

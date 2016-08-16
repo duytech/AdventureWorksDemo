@@ -6,5 +6,7 @@
         public static string AdminUserName => ConfigurationManager.AppSettings["AdminUserName"];
 
         public static string AdminPassword => ConfigurationManager.AppSettings["AdminPassword"];
+
+        public static int TokenExpiryTime => int.Parse(ConfigurationManager.AppSettings["TokenExpiryTime"]);
     }
 }
