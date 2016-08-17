@@ -3,7 +3,7 @@
     using AW.DataAccess.Entities;
     using Common;
 
-    public interface IAWBuildVersionRepo : IRepository<AWBuildVersion>
+    public interface IBuildVersionRepo : IRepository<AWBuildVersion>
     {
     }
 }

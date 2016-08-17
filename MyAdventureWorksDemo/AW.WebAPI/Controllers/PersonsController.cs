@@ -1,7 +1,6 @@
 ﻿namespace AW.WebAPI.Controllers
 {
     using Bussiness.Person;
-    using System.Collections;
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
@@ -16,7 +15,7 @@
         [HttpGet]
         public HttpResponseMessage GetById(int id)
         {
-            var r = personManager.FindBy(x => x.BusinessEntityID == id);
+            var r = personManager.GetById(id);
             return Request.CreateResponse(HttpStatusCode.OK, r);
         }
 

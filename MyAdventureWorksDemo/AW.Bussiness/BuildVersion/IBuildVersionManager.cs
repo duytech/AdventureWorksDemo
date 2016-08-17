@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AW.Bussiness
+namespace AW.Bussiness.BuildVersion
 {
-    public class Class1
+    public interface IBuildVersionManager
     {
+        IEnumerable<Models.BuildVersion> GetAll();
     }
 }

@@ -11,10 +11,10 @@
 
     public abstract class Repository<T> where T : class
     {
-        private IAWDbFactory _entities;
+        private IDbFactory _entities;
         private readonly IDbSet<T> _dbset;
 
-        public Repository(IAWDbFactory context)
+        public Repository(IDbFactory context)
         {
             //context.GetDb().Configuration.ProxyCreationEnabled = false;
             _entities = context;

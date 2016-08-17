@@ -5,6 +5,6 @@
     using Interfaces;
     public class EmployeeRepo : Repository<Employee>, IEmployeeRepo
     {
-        public EmployeeRepo(IAWDbFactory context) : base(context) { }
+        public EmployeeRepo(IDbFactory context) : base(context) { }
     }
 }

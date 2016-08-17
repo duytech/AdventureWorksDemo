@@ -1,29 +1,40 @@
 ﻿namespace AW.Bussiness.Person
 {
-    using AW.DataAccess.Interfaces;
+    using AutoMapper;
+    using DataAccess.Interfaces;
+    using Models.Mapper;
     using System.Collections.Generic;
-    using DataAccess.Entities;
-    using System;
-    using System.Linq.Expressions;
+    using AW.Bussiness.DI;
 
     public class PersonManager : IPersonManager
     {
         private IPersonRepo personRepo;
-        public PersonManager(IPersonRepo personRepo)
+        private IMapper mapper;
+
+        public PersonManager() : this(ServiceLocator.Current.Get<IPersonRepo>(), ServiceLocator.Current.Get<IMapper>())
+        { }
+        public PersonManager(IPersonRepo personRepo, IMapper mapper)
         {
             this.personRepo = personRepo;
+            this.mapper = mapper;
         }
 
-        public IEnumerable<Person> Search()
+        public IEnumerable<AW.Models.Person> Search()
         {
-            return personRepo.GetAll();
+            var result = personRepo.GetAll();
+
+            var mappedResult = mapper.Map<IEnumerable<Models.Person>>(result);
+
+            return mappedResult;
         }
 
-        IEnumerable<Person> IPersonManager.FindBy(Expression<Func<Person, bool>> predicate)
+        public IEnumerable<AW.Models.Person> GetById(int id)
         {
-            var result = personRepo.GetList(predicate);
+            var result = personRepo.GetList(x => x.BusinessEntityID == id);
 
-            return result;
+            var mappedResult = mapper.Map<IEnumerable<Models.Person>>(result);
+
+            return mappedResult;
         }
     }
 }

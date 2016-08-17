@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BuildVersion\BuildVersionManager.cs" />
+    <Compile Include="BuildVersion\IBuildVersionManager.cs" />
+    <Compile Include="DI\IServiceLocator.cs" />
+    <Compile Include="DI\ServiceLocator.cs" />
     <Compile Include="Person\IPersonManager.cs" />
     <Compile Include="Person\PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +65,13 @@
       <Project>{7105d5b1-cb15-41da-ba59-32135ec06fed}</Project>
       <Name>AW.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AW.Models\AW.Models.csproj">
+      <Project>{9906571e-0f67-4988-b5c3-3d0685563c51}</Project>
+      <Name>AW.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

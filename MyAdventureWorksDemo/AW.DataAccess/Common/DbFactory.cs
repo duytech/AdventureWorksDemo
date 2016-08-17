@@ -7,7 +7,7 @@ using AW.DataAccess.Entities;
 
 namespace AW.DataAccess.Common
 {
-    public class AWDbFactory : IAWDbFactory
+    public class DbFactory : IDbFactory
     {
         private AdventureWorks2014Entities entities;
         public AdventureWorks2014Entities GetDb()

@@ -7,6 +7,6 @@
 
     public class PersonRepo : Repository<Person>, IPersonRepo
     {
-        public PersonRepo(IAWDbFactory context) : base(context) { }
+        public PersonRepo(IDbFactory context) : base(context) { }
     }
 }

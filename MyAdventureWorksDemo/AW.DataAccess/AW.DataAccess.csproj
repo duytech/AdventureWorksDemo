@@ -51,8 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\AWDbFactory.cs" />
-    <Compile Include="Common\IAWDbFactory.cs" />
+    <Compile Include="Common\DbFactory.cs" />
+    <Compile Include="Common\IDbFactory.cs" />
     <Compile Include="Common\IUnitOfWork.cs" />
     <Compile Include="Common\UnitOfWork.cs" />
     <Compile Include="Entities\Address.cs">
@@ -355,11 +355,11 @@
     <Compile Include="Entities\WorkOrderRouting.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\AWBuildVersionRepo.cs" />
+    <Compile Include="Implementations\BuildVersionRepo.cs" />
     <Compile Include="Implementations\EmployeeRepo.cs" />
     <Compile Include="Implementations\PersonRepo.cs" />
     <Compile Include="Common\Repository.cs" />
-    <Compile Include="Interfaces\IAWBuildVersionRepo.cs" />
+    <Compile Include="Interfaces\IBuildVersionRepo.cs" />
     <Compile Include="Interfaces\IEmployeeRepo.cs" />
     <Compile Include="Interfaces\IPersonRepo.cs" />
     <Compile Include="Common\IRepository.cs" />
