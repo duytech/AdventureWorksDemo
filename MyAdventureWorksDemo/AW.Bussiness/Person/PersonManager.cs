@@ -1,10 +1,9 @@
 ﻿namespace AW.Bussiness.Person
 {
     using AutoMapper;
-    using DataAccess.Interfaces;
-    using Models.Mapper;
-    using System.Collections.Generic;
     using AW.Bussiness.DI;
+    using DataAccess.Interfaces;
+    using System.Collections.Generic;
 
     public class PersonManager : IPersonManager
     {
@@ -30,7 +29,7 @@
 
         public IEnumerable<AW.Models.Person> GetById(int id)
         {
-            var result = personRepo.GetList(x => x.BusinessEntityID == id);
+            var result = personRepo.GetById(id);
 
             var mappedResult = mapper.Map<IEnumerable<Models.Person>>(result);
 

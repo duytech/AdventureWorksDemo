@@ -1,6 +1,7 @@
 ﻿namespace AW.WebAPI.App_Start
 {
     using Bussiness.BuildVersion;
+    using Bussiness.Customer;
     using Bussiness.Person;
     using DryIoc;
     using DryIoc.WebApi;
@@ -12,6 +13,7 @@
             var container = new Container();
             container.Register<IPersonManager>(reuse: Reuse.Singleton, made: Made.Of(() => new PersonManager()));
             container.Register<IBuildVersionManager, BuildVersionManager>(reuse: Reuse.Singleton, made: Made.Of(() => new BuildVersionManager()));
+            container.Register<ICustomerManager>(reuse: Reuse.Singleton, made: Made.Of(() => new CustomerManager()));
             container.WithWebApi(config);
         }
     }

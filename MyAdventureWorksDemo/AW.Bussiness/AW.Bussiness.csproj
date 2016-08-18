@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="BuildVersion\BuildVersionManager.cs" />
     <Compile Include="BuildVersion\IBuildVersionManager.cs" />
+    <Compile Include="Customer\CustomerManager.cs" />
+    <Compile Include="Customer\ICustomerManager.cs" />
     <Compile Include="DI\IServiceLocator.cs" />
     <Compile Include="DI\ServiceLocator.cs" />
     <Compile Include="Person\IPersonManager.cs" />

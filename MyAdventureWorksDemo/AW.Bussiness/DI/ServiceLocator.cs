@@ -51,8 +51,8 @@
 
                 kernel.Bind<IDbFactory>().To<DbFactory>();
                 kernel.Bind<IPersonRepo>().To<PersonRepo>();
-
                 kernel.Bind<IBuildVersionRepo>().To<BuildVersionRepo>();
+                kernel.Bind<ICustomerRepo>().To<CustomerRepo>();
             }
         }
     }

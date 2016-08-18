@@ -21,7 +21,5 @@
         IEnumerable<T> GetAllWithPaging(int pageIndex, int pageSize);
 
         IEnumerable<T> GetAll();
-
-        IEnumerable<T> GetList(Expression<Func<T, bool>> where);
     }
 }

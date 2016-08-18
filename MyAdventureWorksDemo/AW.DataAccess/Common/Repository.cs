@@ -11,8 +11,8 @@
 
     public abstract class Repository<T> where T : class
     {
-        private IDbFactory _entities;
-        private readonly IDbSet<T> _dbset;
+        protected IDbFactory _entities;
+        protected readonly IDbSet<T> _dbset;
 
         public Repository(IDbFactory context)
         {
@@ -64,7 +64,6 @@
         public virtual T GetById(int id)
         {
             var result = _dbset.Find(id);
-            _entities.GetDb().SaveChanges();
             return result;
         }
 
@@ -81,12 +80,6 @@
         public virtual IEnumerable<T> GetAll()
         {
             return _dbset.ToList();
-        }
-
-        public virtual IEnumerable<T> GetList(Expression<Func<T, bool>> where)
-        {
-            var r = _dbset.Where(where).ToList();
-            return r;
         }
     }
 }

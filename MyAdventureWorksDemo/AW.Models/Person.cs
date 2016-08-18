@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AW.Models
+﻿namespace AW.Models
 {
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
     public class Person
     {
-        public string Id { get; set; }
+        [JsonProperty("PersonId")]
+        public string BusinessEntityID { get; set; }
         public string PersonType { get; set; }
         public bool NameStyle { get; set; }
         public string Title { get; set; }
@@ -19,5 +17,9 @@ namespace AW.Models
         public int EmailPromotion { get; set; }
         public string AdditionalContactInfo { get; set; }
         public string Demographics { get; set; }
+        public Guid rowguid { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public ICollection<EmailAddress> EmailAddresses { get; set; }
+        public ICollection<PersonPhone> PersonPhones { get; set; }
     }
 }
