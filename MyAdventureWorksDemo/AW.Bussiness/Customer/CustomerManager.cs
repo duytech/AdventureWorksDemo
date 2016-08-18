@@ -1,11 +1,11 @@
 ﻿namespace AW.Bussiness.Customer
 {
-    using System;
-    using System.Collections.Generic;
     using AutoMapper;
-    using Models;
-    using DataAccess.Interfaces;
+    using DataAccess.Customer;
     using DI;
+    using Models;
+    using System.Collections.Generic;
+
     public class CustomerManager : ICustomerManager
     {
         private ICustomerRepo customerRepo;

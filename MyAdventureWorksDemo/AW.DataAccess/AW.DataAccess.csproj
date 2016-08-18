@@ -355,15 +355,11 @@
     <Compile Include="Entities\WorkOrderRouting.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>
-    <Compile Include="Implementations\BuildVersionRepo.cs" />
-    <Compile Include="Implementations\CustomerRepo.cs" />
-    <Compile Include="Implementations\EmployeeRepo.cs" />
-    <Compile Include="Implementations\PersonRepo.cs" />
+    <Compile Include="BuildVersion\BuildVersionRepo.cs" />
+    <Compile Include="Customer\CustomerRepo.cs" />
     <Compile Include="Common\Repository.cs" />
-    <Compile Include="Interfaces\IBuildVersionRepo.cs" />
-    <Compile Include="Interfaces\ICustomerRepo.cs" />
-    <Compile Include="Interfaces\IEmployeeRepo.cs" />
-    <Compile Include="Interfaces\IPersonRepo.cs" />
+    <Compile Include="BuildVersion\IBuildVersionRepo.cs" />
+    <Compile Include="Customer\ICustomerRepo.cs" />
     <Compile Include="Common\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace AW.DataAccess.Interfaces
+﻿namespace AW.DataAccess.Customer
 {
     using Entities;
     using Common;

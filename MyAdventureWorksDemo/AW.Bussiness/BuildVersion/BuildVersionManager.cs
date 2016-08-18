@@ -1,7 +1,7 @@
 ﻿namespace AW.Bussiness.BuildVersion
 {
     using AutoMapper;
-    using DataAccess.Interfaces;
+    using DataAccess.BuildVersion;
     using DI;
     using System.Collections.Generic;
     public class BuildVersionManager : IBuildVersionManager

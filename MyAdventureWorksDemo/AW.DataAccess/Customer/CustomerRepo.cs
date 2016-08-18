@@ -1,11 +1,10 @@
-﻿namespace AW.DataAccess.Implementations
+﻿namespace AW.DataAccess.Customer
 {
     using Common;
     using Entities;
-    using Interfaces;
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Linq.Expressions;
 
     public class CustomerRepo : Repository<Customer>, ICustomerRepo

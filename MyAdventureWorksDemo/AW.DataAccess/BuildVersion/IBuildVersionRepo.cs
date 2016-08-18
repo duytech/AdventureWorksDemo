@@ -1,4 +1,4 @@
-﻿namespace AW.DataAccess.Interfaces
+﻿namespace AW.DataAccess.BuildVersion
 {
     using AW.DataAccess.Entities;
     using Common;

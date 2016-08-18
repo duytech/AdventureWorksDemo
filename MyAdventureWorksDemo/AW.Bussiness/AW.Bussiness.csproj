@@ -55,8 +55,6 @@
     <Compile Include="Customer\ICustomerManager.cs" />
     <Compile Include="DI\IServiceLocator.cs" />
     <Compile Include="DI\ServiceLocator.cs" />
-    <Compile Include="Person\IPersonManager.cs" />
-    <Compile Include="Person\PersonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

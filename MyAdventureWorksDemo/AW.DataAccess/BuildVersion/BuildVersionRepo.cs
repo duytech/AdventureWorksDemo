@@ -1,7 +1,6 @@
-﻿namespace AW.DataAccess.Implementations
+﻿namespace AW.DataAccess.BuildVersion
 {
-    using AW.DataAccess.Common;
-    using Interfaces;
+    using Common;
 
     public class BuildVersionRepo : Repository<Entities.AWBuildVersion>, IBuildVersionRepo
     {

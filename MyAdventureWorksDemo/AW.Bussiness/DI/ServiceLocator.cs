@@ -1,12 +1,11 @@
 ﻿namespace AW.Bussiness.DI
 {
     using AutoMapper;
+    using DataAccess.BuildVersion;
     using DataAccess.Common;
-    using DataAccess.Implementations;
-    using DataAccess.Interfaces;
+    using DataAccess.Customer;
     using Models.Mapper;
     using Ninject;
-    using System;
     internal class ServiceLocator
     {
         private static IServiceLocator serviceLocator;
@@ -50,7 +49,6 @@
                 kernel.Bind<IMapper>().ToConstant(mapper);
 
                 kernel.Bind<IDbFactory>().To<DbFactory>();
-                kernel.Bind<IPersonRepo>().To<PersonRepo>();
                 kernel.Bind<IBuildVersionRepo>().To<BuildVersionRepo>();
                 kernel.Bind<ICustomerRepo>().To<CustomerRepo>();
             }
