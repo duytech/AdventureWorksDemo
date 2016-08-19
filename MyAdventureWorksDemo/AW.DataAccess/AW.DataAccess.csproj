@@ -389,6 +389,12 @@
       <LastGenOutput>AW.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AW.Common\AW.Common.csproj">
+      <Project>{98EAD722-AE08-4416-AFB0-74D2450C0F7C}</Project>
+      <Name>AW.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

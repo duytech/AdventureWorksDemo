@@ -1,10 +1,16 @@
 ﻿namespace AW.Bussiness.Customer
 {
     using AutoMapper;
+    using AW.Common;
+    using AW.Common.Constants;
+    using AW.Common.Utils;
+    using Common;
     using DataAccess.Customer;
     using DI;
     using Models;
+    using System;
     using System.Collections.Generic;
+    using System.Linq.Expressions;
 
     public class CustomerManager : ICustomerManager
     {
@@ -27,9 +33,22 @@
             return mappedResult;
         }
 
-        public IEnumerable<Customer> Search(int pageIndex, int pageSize)
+        public IEnumerable<Customer> Search(int pageIndex, int pageSize, out string error, Sorting sorting = null)
         {
-            var result = customerRepo.Search(pageIndex, pageSize);
+            error = string.Empty;
+
+            var dict = PropertyMappingTable.GetCustomer();
+            bool isExist = dict.ContainsKey(sorting.PropertyName);
+            if(!isExist)
+            {
+                error = string.Format(Message.Common.PropertyInvalid, sorting.PropertyName);
+
+                return null;
+            }
+
+            var entityProperty = dict[sorting.PropertyName];
+
+            var result = customerRepo.Search(pageIndex, pageSize, null, sorting);
             var mappedResult = mapper.Map<IEnumerable<Customer>>(result);
 
             return mappedResult;

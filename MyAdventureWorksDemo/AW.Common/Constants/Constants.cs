@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AW.Common.Constants
+﻿namespace AW.Common.Constants
 {
     public struct Message
     {
@@ -15,6 +9,14 @@ namespace AW.Common.Constants
             public const string RequestInvalid = "The request message is invalid.";
             public const string ExceptionOccurs = "An unexpected error occurred during process your request. Please contact your administrator.";
             public const string AuthorizationInvalid = "Authentication failed, check if the token key is provided or doesn't expire.";
+            public const string SortingInvalid = "The sorting format is invalid.";
+            public const string PropertyInvalid = "The property {0} is not supported.";
         }
+    }
+
+    public enum SortDirection
+    {
+        Ascending,
+        Descending
     }
 }

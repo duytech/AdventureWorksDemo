@@ -17,6 +17,7 @@
         public int EmailPromotion { get; set; }
         public string AdditionalContactInfo { get; set; }
         public string Demographics { get; set; }
+        [JsonIgnore]
         public Guid rowguid { get; set; }
         public DateTime ModifiedDate { get; set; }
         public ICollection<EmailAddress> EmailAddresses { get; set; }

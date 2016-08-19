@@ -72,14 +72,9 @@
             return _dbset.Where(where).First();
         }
 
-        public virtual IEnumerable<T> GetAllWithPaging(int pageIndex, int pageSize)
-        {
-            return _dbset.Skip(pageIndex * pageSize).Take(pageSize).AsEnumerable();
-        }
-
         public virtual IEnumerable<T> GetAll()
         {
-            return _dbset.ToList();
+            return _dbset.AsEnumerable();
         }
     }
 }

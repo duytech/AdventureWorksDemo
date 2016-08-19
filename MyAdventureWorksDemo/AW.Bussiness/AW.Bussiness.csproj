@@ -51,16 +51,19 @@
   <ItemGroup>
     <Compile Include="BuildVersion\BuildVersionManager.cs" />
     <Compile Include="BuildVersion\IBuildVersionManager.cs" />
+    <Compile Include="Common\PropertyMappingTable.cs" />
     <Compile Include="Customer\CustomerManager.cs" />
     <Compile Include="Customer\ICustomerManager.cs" />
     <Compile Include="DI\IServiceLocator.cs" />
     <Compile Include="DI\ServiceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\AW.Common\AW.Common.csproj">
+      <Project>{98EAD722-AE08-4416-AFB0-74D2450C0F7C}</Project>
+      <Name>AW.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AW.DataAccess\AW.DataAccess.csproj">
       <Project>{7105d5b1-cb15-41da-ba59-32135ec06fed}</Project>
       <Name>AW.DataAccess</Name>

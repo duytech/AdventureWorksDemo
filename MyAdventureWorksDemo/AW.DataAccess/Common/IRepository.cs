@@ -18,8 +18,6 @@
 
         T GetFirst(Expression<Func<T, bool>> where);
 
-        IEnumerable<T> GetAllWithPaging(int pageIndex, int pageSize);
-
         IEnumerable<T> GetAll();
     }
 }
