@@ -1,16 +1,16 @@
 ﻿namespace AW.Bussiness.Customer
 {
+    #region
     using AutoMapper;
     using AW.Common;
     using AW.Common.Constants;
-    using AW.Common.Utils;
+    using AW.Common.Dtos;
     using Common;
     using DataAccess.Customer;
     using DI;
     using Models;
-    using System;
     using System.Collections.Generic;
-    using System.Linq.Expressions;
+    #endregion
 
     public class CustomerManager : ICustomerManager
     {
@@ -25,33 +25,29 @@
             this.customerRepo = customerRepo;
             this.mapper = mapper;
         }
-        public Models.Customer GetById(int id)
+        public Customer GetById(int id)
         {
-            var result = customerRepo.GetById(id);
-            var mappedResult = mapper.Map<Customer>(result);
-
-            return mappedResult;
+            return mapper.Map<Customer>(customerRepo.GetById(id));
         }
 
         public IEnumerable<Customer> Search(int pageIndex, int pageSize, out string error, Sorting sorting = null)
         {
             error = string.Empty;
 
-            var dict = PropertyMappingTable.GetCustomer();
-            bool isExist = dict.ContainsKey(sorting.PropertyName);
-            if(!isExist)
+            var dict = PropertyDictionary.GetCustomer();
+            if(sorting != null && !dict.ContainsKey(sorting.PropertyName))
             {
                 error = string.Format(Message.Common.PropertyInvalid, sorting.PropertyName);
 
                 return null;
             }
 
-            var entityProperty = dict[sorting.PropertyName];
+            if (sorting != null && dict.ContainsKey(sorting.PropertyName))
+                sorting.PropertyName = dict[sorting.PropertyName];
 
-            var result = customerRepo.Search(pageIndex, pageSize, null, sorting);
-            var mappedResult = mapper.Map<IEnumerable<Customer>>(result);
+            // Process search option
 
-            return mappedResult;
+            return mapper.Map<IEnumerable<Customer>>(customerRepo.Search(pageIndex, pageSize, null, sorting));
         }
     }
 }

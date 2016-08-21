@@ -1,13 +1,14 @@
 ﻿namespace AW.WebAPI.Controllers
 {
+    #region Using
     using Bussiness.Customer;
-    using Common;
     using Common.Constants;
+    using Common.Dtos;
     using Common.Utils;
-    using Models;
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
+    #endregion
 
     public class CustomersController : ApiController
     {
@@ -20,17 +21,16 @@
         [HttpGet]
         public HttpResponseMessage GetById(int id)
         {
-            var result = customerManager.GetById(id);
+            if (id == 0)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, Message.Common.RequestInvalid);
 
-            return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateResponse(HttpStatusCode.OK, customerManager.GetById(id));
         }
 
         [HttpGet]
         public HttpResponseMessage Search(string sorting = null, int pageIndex = 1, int pageSize = 100)
         {
             var sortParsed = CommonUtils.ParseSorting(sorting);
-            if (sortParsed == null)
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, Message.Common.SortingInvalid);
 
             string error = string.Empty;
             var result = customerManager.Search(pageIndex, pageSize, out error, sortParsed);

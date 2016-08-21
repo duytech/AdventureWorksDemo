@@ -1,7 +1,7 @@
 ﻿namespace AW.Bussiness.Common
 {
     using System.Collections.Generic;
-    public static class PropertyMappingTable
+    public static class PropertyDictionary
     {
         public static Dictionary<string, string> GetCustomer()
         {

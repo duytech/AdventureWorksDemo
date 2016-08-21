@@ -1,5 +1,6 @@
 ﻿namespace AW.DataAccess.Common
 {
+    #region Using
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -8,6 +9,7 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
+    #endregion
 
     public abstract class Repository<T> where T : class
     {
@@ -16,7 +18,6 @@
 
         public Repository(IDbFactory context)
         {
-            //context.GetDb().Configuration.ProxyCreationEnabled = false;
             _entities = context;
             _dbset = context.GetDb().Set<T>();
         }
@@ -63,8 +64,7 @@
 
         public virtual T GetById(int id)
         {
-            var result = _dbset.Find(id);
-            return result;
+            return _dbset.Find(id);
         }
 
         public virtual T GetFirst(Expression<Func<T, bool>> where)

@@ -1,5 +1,6 @@
 ﻿namespace AW.DataAccess.Customer
 {
+    #region Using
     using AW.Common;
     using Common;
     using Entities;
@@ -8,6 +9,9 @@
     using System.Linq;
     using System.Linq.Expressions;
     using AW.Common.Extensions;
+    using AW.Common.Dtos;
+    using AW.Common.Utils;
+    #endregion
 
     public class CustomerRepo : Repository<Customer>, ICustomerRepo
     {

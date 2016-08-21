@@ -1,8 +1,10 @@
 ﻿namespace AW.DataAccess.Common
 {
+    #region Using
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
+    #endregion
 
     public interface IRepository<T> where T : class
     {

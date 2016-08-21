@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AW.Bussiness.BuildVersion
+﻿namespace AW.Bussiness.BuildVersion
 {
+    using System.Collections.Generic;
     public interface IBuildVersionManager
     {
         IEnumerable<Models.BuildVersion> GetAll();

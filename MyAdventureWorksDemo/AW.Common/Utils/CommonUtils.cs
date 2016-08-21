@@ -1,6 +1,9 @@
 ﻿namespace AW.Common.Utils
 {
+    #region Using
     using Constants;
+    using Dtos;
+    #endregion
     public static class CommonUtils
     {
         public static Sorting ParseSorting(string sortingString)

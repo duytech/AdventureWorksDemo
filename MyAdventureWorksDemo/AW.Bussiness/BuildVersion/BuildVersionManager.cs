@@ -1,9 +1,11 @@
 ﻿namespace AW.Bussiness.BuildVersion
 {
+    #region
     using AutoMapper;
     using DataAccess.BuildVersion;
     using DI;
     using System.Collections.Generic;
+    #endregion
     public class BuildVersionManager : IBuildVersionManager
     {
         private IBuildVersionRepo repo;
@@ -20,10 +22,7 @@
 
         public IEnumerable<Models.BuildVersion> GetAll()
         {
-            var result = repo.GetAll();
-            var mappedResult = mapper.Map<IEnumerable<Models.BuildVersion>>(result);
-
-            return mappedResult;
+            return mapper.Map<IEnumerable<Models.BuildVersion>>(repo.GetAll());
         }
     }
 }

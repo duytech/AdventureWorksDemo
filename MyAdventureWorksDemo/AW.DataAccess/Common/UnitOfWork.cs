@@ -1,7 +1,9 @@
 ﻿namespace AW.DataAccess.Common
 {
+    #region Using
     using System;
     using System.Data.Entity;
+    #endregion
     public sealed class UnitOfWork : IUnitOfWork
     {
         private DbContext _dbContext;

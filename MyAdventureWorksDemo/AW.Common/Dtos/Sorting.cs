@@ -1,6 +1,6 @@
-﻿namespace AW.Common
+﻿namespace AW.Common.Dtos
 {
-    using AW.Common.Constants;
+    using Constants;
     public class Sorting
     {
         public string PropertyName { get; set; }

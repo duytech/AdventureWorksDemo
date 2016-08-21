@@ -1,10 +1,12 @@
 ﻿namespace AW.WebAPI.App_Start
 {
+    #region Using
     using Bussiness.BuildVersion;
     using Bussiness.Customer;
     using DryIoc;
     using DryIoc.WebApi;
     using System.Web.Http;
+    #endregion
     public class DependencyInjectionConfig
     {
         public static void Register(HttpConfiguration config)

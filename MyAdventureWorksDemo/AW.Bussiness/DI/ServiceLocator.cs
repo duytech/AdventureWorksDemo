@@ -1,11 +1,13 @@
 ﻿namespace AW.Bussiness.DI
 {
+    #region Using
     using AutoMapper;
     using DataAccess.BuildVersion;
     using DataAccess.Common;
     using DataAccess.Customer;
     using Models.Mapper;
     using Ninject;
+    #endregion
     internal class ServiceLocator
     {
         private static IServiceLocator serviceLocator;
@@ -15,17 +17,12 @@
             serviceLocator = new DefaultServiceLocator();
         }
 
-        public static IServiceLocator Current
-        {
-            get
-            {
-                return serviceLocator;
-            }
-        }
+        public static IServiceLocator Current => serviceLocator;
 
         private sealed class DefaultServiceLocator : IServiceLocator
         {
-            private readonly IKernel kernel;  // Ninject kernel
+            // Ninject kernel
+            private readonly IKernel kernel;
 
             public DefaultServiceLocator()
             {
@@ -33,10 +30,7 @@
                 LoadBindings();
             }
 
-            public T Get<T>()
-            {
-                return kernel.Get<T>();
-            }
+            public T Get<T>() => kernel.Get<T>();
 
             private void LoadBindings()
             {

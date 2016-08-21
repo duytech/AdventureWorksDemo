@@ -1,11 +1,14 @@
 ﻿namespace AW.DataAccess.Customer
 {
+    #region Using
     using Entities;
     using Common;
     using System.Collections.Generic;
     using System.Linq.Expressions;
     using System;
     using AW.Common;
+    using AW.Common.Dtos;
+    #endregion
 
     public interface ICustomerRepo : IRepository<Customer>
     {
