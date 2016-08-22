@@ -22,14 +22,13 @@
             _dbset = context.GetDb().Set<T>();
         }
 
-        public virtual void Create(T entity)
+        public virtual T Create(T entity)
         {
-            _dbset.Add(entity);
+            return _dbset.Add(entity);
         }
 
         public virtual void Update(T entity)
         {
-            _dbset.Attach(entity);
             _entities.GetDb().Entry(entity).State = EntityState.Modified;
         }
 
@@ -62,6 +61,31 @@
             _entities.GetDb().Database.ExecuteSqlCommand(deleteSql, parameters);
         }
 
+        public virtual IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
+        {
+            IQueryable<T> query = _dbset;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+            else
+            {
+                return query.ToList();
+            }
+        }
+
         public virtual T GetById(int id)
         {
             return _dbset.Find(id);
@@ -75,6 +99,11 @@
         public virtual IEnumerable<T> GetAll()
         {
             return _dbset.AsEnumerable();
+        }
+
+        public virtual void Save()
+        {
+            _entities.GetDb().SaveChanges();
         }
     }
 }

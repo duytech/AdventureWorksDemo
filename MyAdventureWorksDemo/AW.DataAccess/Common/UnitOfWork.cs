@@ -4,6 +4,7 @@
     using System;
     using System.Data.Entity;
     #endregion
+    // The unit of work class serves one purpose: to make sure that when you use multiple repositories, they share a single database context.
     public sealed class UnitOfWork : IUnitOfWork
     {
         private DbContext _dbContext;

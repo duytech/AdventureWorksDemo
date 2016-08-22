@@ -8,5 +8,9 @@
         Customer GetById(int id);
 
         IEnumerable<Customer> Search(int pageIndex, int pageSize, out string error, Sorting sorting = null);
+
+        Customer Create(Customer customer);
+
+        Customer Update(Customer customer);
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace AW.DataAccess.Common
 {
     using System;
+    // The unit of work class serves one purpose: to make sure that when you use multiple repositories, they share a single database context.
     public interface IUnitOfWork : IDisposable
     {
         /// <summary>

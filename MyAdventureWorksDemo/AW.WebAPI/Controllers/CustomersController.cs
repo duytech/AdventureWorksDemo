@@ -8,6 +8,7 @@
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
+    using System;
     #endregion
 
     public class CustomersController : ApiController
@@ -40,6 +41,16 @@
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        [HttpPost]
+        public HttpResponseMessage InsertOrUpdate(Models.Customer customer)
+        {
+            if(customer == null)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, Message.Common.RequestInvalid);
 
+            if (customer.CustomerID != 0)
+                return Request.CreateResponse(HttpStatusCode.OK, customerManager.Update(customer));
+            else
+                return Request.CreateResponse(HttpStatusCode.OK, customerManager.Create(customer));
+        }
     }
 }

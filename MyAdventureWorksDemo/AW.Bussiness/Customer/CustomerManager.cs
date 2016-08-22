@@ -10,6 +10,7 @@
     using DI;
     using Models;
     using System.Collections.Generic;
+    using System;
     #endregion
 
     public class CustomerManager : ICustomerManager
@@ -48,6 +49,35 @@
             // Process search option
 
             return mapper.Map<IEnumerable<Customer>>(customerRepo.Search(pageIndex, pageSize, null, sorting));
+        }
+
+        public Customer Create(Customer customer)
+        {
+            var entity = mapper.Map<DataAccess.Entities.Customer>(customer);
+            entity.rowguid = Guid.NewGuid();
+            entity.ModifiedDate = DateTime.Now;
+            var result = customerRepo.Create(entity);
+            customerRepo.Save();
+            var model = mapper.Map<Customer>(result);
+
+            return model;
+        }
+
+        public Customer Update(Customer customer)
+        {
+            var existingEntity = customerRepo.GetById(customer.CustomerID);
+            // Avoid exception when update entity using Entity Framework and Automapper
+            var mappedEntity = mapper.Map(customer, existingEntity);
+
+            //var entity = mapper.Map<DataAccess.Entities.Customer>(customer);
+            //entity.rowguid = Guid.NewGuid();
+            //entity.ModifiedDate = DateTime.Now;
+            customerRepo.Update(mappedEntity);
+            customerRepo.Save();
+            var result = customerRepo.GetById(mappedEntity.CustomerID);
+            var model = mapper.Map<Customer>(result);
+
+            return model;
         }
     }
 }
