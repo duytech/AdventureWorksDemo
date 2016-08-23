@@ -1,14 +1,13 @@
 ﻿namespace AW.WebAPI.Controllers
 {
+
     #region Using
+    using AW.Common.Constants;
+    using AW.Common.Utils;
     using Bussiness.Customer;
-    using Common.Constants;
-    using Common.Dtos;
-    using Common.Utils;
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
-    using System;
     #endregion
 
     public class CustomersController : ApiController
