@@ -25,6 +25,8 @@
 
         IEnumerable<T> GetAll();
 
+        IQueryable<T> GetAllQueryable();
+
         void Save();
     }
 }

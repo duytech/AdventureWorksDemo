@@ -55,6 +55,8 @@
     <Compile Include="Common\IDbFactory.cs" />
     <Compile Include="Common\IUnitOfWork.cs" />
     <Compile Include="Common\UnitOfWork.cs" />
+    <Compile Include="Employee\EmployeeRepo.cs" />
+    <Compile Include="Employee\IEmployeeRepo.cs" />
     <Compile Include="Entities\Address.cs">
       <DependentUpon>AW.tt</DependentUpon>
     </Compile>

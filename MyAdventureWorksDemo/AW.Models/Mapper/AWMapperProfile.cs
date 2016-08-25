@@ -57,6 +57,9 @@
                     EmailAddresses = src.EmailAddresses != null && src.EmailAddresses.Count > 0 ? Mapper.Map<ICollection<DataAccess.Entities.EmailAddress>>(src.EmailAddresses) : null,
                     PersonPhones = src.PersonPhones != null && src.PersonPhones.Count > 0 ? Mapper.Map<ICollection<DataAccess.Entities.PersonPhone>>(src.PersonPhones) : null
                 }));
+
+            CreateMap<DataAccess.Entities.Employee, Employee>()
+                .ReverseMap();
         }
     }
 }

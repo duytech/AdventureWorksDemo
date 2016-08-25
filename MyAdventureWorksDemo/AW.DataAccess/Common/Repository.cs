@@ -101,6 +101,11 @@
             return _dbset.AsEnumerable();
         }
 
+        public virtual IQueryable<T> GetAllQueryable()
+        {
+            return _dbset.AsQueryable();
+        }
+
         public virtual void Save()
         {
             _entities.GetDb().SaveChanges();

@@ -3,9 +3,12 @@
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Person
     {
         [JsonProperty("PersonId")]
+        [Key]
         public string BusinessEntityID { get; set; }
         public string PersonType { get; set; }
         public bool NameStyle { get; set; }
