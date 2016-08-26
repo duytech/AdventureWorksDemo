@@ -168,6 +168,8 @@
     <Compile Include="App_Start\DependencyInjectionConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\ApplicationExceptionFilter.cs" />
+    <Compile Include="Common\Odata\ApplicationODataEntityTypeSerializer.cs" />
+    <Compile Include="Common\Odata\ApplicationODataSerializerProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildVersionController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />

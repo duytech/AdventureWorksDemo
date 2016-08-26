@@ -1,6 +1,8 @@
 ﻿namespace AW.Models
 {
     using System;
+    using System.Collections.Generic;
+
     public class Employee : Person
     {
         public string NationalIDNumber { get; set; }
@@ -15,5 +17,6 @@
         public short VacationHours { get; set; }
         public short SickLeaveHours { get; set; }
         public bool CurrentFlag { get; set; }
+        public ICollection<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
     }
 }

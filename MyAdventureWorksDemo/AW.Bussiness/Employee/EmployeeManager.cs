@@ -9,22 +9,19 @@
     public class EmployeeManager : IEmployeeManager
     {
         private IEmployeeRepo repo;
-        private IMapper mapper;
+        private IConfigurationProvider configurationProvider;
 
-        public EmployeeManager() : this(ServiceLocator.Current.Get<IEmployeeRepo>(), ServiceLocator.Current.Get<IMapper>()) { }
+        public EmployeeManager() : this(ServiceLocator.Current.Get<IEmployeeRepo>(), ServiceLocator.Current.Get<IConfigurationProvider>()) { }
 
-        public EmployeeManager(IEmployeeRepo repo, IMapper mapper)
+        public EmployeeManager(IEmployeeRepo repo, IConfigurationProvider configurationProvider)
         {
             this.repo = repo;
-            this.mapper = mapper;
+            this.configurationProvider = configurationProvider;
         }
 
         public IQueryable<Models.Employee> Search()
         {
-            Mapper.Initialize(cfg =>
-                cfg.AddProfile(new AWMapperProfile())
-            );
-            return repo.GetAllQueryable().ProjectTo<Models.Employee>();
+            return repo.GetAllQueryable().ProjectTo<Models.Employee>(configurationProvider);
         }
     }
 }

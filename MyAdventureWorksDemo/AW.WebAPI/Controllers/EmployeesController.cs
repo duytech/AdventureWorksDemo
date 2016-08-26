@@ -2,7 +2,8 @@
 {
     using Bussiness.Employee;
     using System.Linq;
-    using System.Web.Http;
+    using System.Net;
+    using System.Net.Http;
     using System.Web.OData;
 
     public class EmployeesController : ODataController
@@ -15,9 +16,9 @@
         }
 
         [EnableQuery]
-        public IHttpActionResult Get()
+        public HttpResponseMessage Get()
         {
-            return Ok(employeeManager.Search().ToList());
+            return Request.CreateResponse(HttpStatusCode.OK, employeeManager.Search().ToList());
         }
     }
 }

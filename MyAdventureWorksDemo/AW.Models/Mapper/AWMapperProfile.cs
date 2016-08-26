@@ -60,6 +60,15 @@
 
             CreateMap<DataAccess.Entities.Employee, Employee>()
                 .ReverseMap();
+
+            CreateMap<DataAccess.Entities.EmployeeDepartmentHistory, EmployeeDepartmentHistory>()
+                .ReverseMap();
+
+            CreateMap<DataAccess.Entities.Department, Department>()
+                .ReverseMap();
+
+            CreateMap<DataAccess.Entities.Shift, Shift>()
+                .ReverseMap();
         }
     }
 }

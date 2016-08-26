@@ -42,6 +42,7 @@
                 var mapper = mapperConfiguration.CreateMapper();
 
                 kernel.Bind<IMapper>().ToConstant(mapper);
+                kernel.Bind<IConfigurationProvider>().ToConstant(mapperConfiguration);
 
                 kernel.Bind<IDbFactory>().To<DbFactory>();
                 kernel.Bind<IBuildVersionRepo>().To<BuildVersionRepo>();
