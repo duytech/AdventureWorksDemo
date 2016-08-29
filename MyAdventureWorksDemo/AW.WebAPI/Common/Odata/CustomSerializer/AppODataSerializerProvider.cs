@@ -1,14 +1,14 @@
-﻿namespace AW.WebAPI.Common.Odata
+﻿namespace AW.WebAPI.Common.Odata.CustomSerializer
 {
     using Microsoft.OData.Edm;
     using System.Web.OData.Formatter.Serialization;
-    public class ApplicationODataSerializerProvider : DefaultODataSerializerProvider
+    public class AppODataSerializerProvider : DefaultODataSerializerProvider
     {
-        private ApplicationODataEntityTypeSerializer serializer;
+        private AppODataEntityTypeSerializer serializer;
 
-        public ApplicationODataSerializerProvider()
+        public AppODataSerializerProvider()
         {
-            serializer = new ApplicationODataEntityTypeSerializer(this);
+            serializer = new AppODataEntityTypeSerializer(this);
         }
 
         public override ODataEdmTypeSerializer GetEdmTypeSerializer(IEdmTypeReference edmType)

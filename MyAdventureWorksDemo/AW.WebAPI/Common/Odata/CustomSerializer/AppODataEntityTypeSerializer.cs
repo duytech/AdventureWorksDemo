@@ -1,12 +1,12 @@
-﻿namespace AW.WebAPI.Common.Odata
+﻿namespace AW.WebAPI.Common.Odata.CustomSerializer
 {
     using Microsoft.OData.Core;
     using System.Collections.Generic;
     using System.Web.OData;
     using System.Web.OData.Formatter.Serialization;
-    public class ApplicationODataEntityTypeSerializer : ODataEntityTypeSerializer
+    public class AppODataEntityTypeSerializer : ODataEntityTypeSerializer
     {
-        public ApplicationODataEntityTypeSerializer(ODataSerializerProvider serializerProvider) : base(serializerProvider) { }
+        public AppODataEntityTypeSerializer(ODataSerializerProvider serializerProvider) : base(serializerProvider) { }
 
         public override ODataEntry CreateEntry(SelectExpandNode selectExpandNode, EntityInstanceContext entityInstanceContext)
         {

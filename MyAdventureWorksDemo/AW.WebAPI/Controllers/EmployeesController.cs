@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Net;
     using System.Net.Http;
+    using System.Web.Http;
     using System.Web.OData;
 
     public class EmployeesController : ODataController
@@ -15,7 +16,8 @@
             this.employeeManager = employeeManager;
         }
 
-        [EnableQuery]
+        //[HttpGet]
+        [EnableQuery(PageSize = 10)]
         public HttpResponseMessage Get()
         {
             return Request.CreateResponse(HttpStatusCode.OK, employeeManager.Search().ToList());

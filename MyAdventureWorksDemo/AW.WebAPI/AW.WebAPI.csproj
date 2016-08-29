@@ -16,7 +16,7 @@
     <RootNamespace>AW.WebAPI</RootNamespace>
     <AssemblyName>AW.WebAPI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -168,8 +168,9 @@
     <Compile Include="App_Start\DependencyInjectionConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\ApplicationExceptionFilter.cs" />
-    <Compile Include="Common\Odata\ApplicationODataEntityTypeSerializer.cs" />
-    <Compile Include="Common\Odata\ApplicationODataSerializerProvider.cs" />
+    <Compile Include="Common\Odata\CustomSerializer\AppODataEntityTypeSerializer.cs" />
+    <Compile Include="Common\Odata\CustomSerializer\AppODataSerializerProvider.cs" />
+    <Compile Include="Common\Odata\CustomSerializer\AppODataFeedSerializer.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuildVersionController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
