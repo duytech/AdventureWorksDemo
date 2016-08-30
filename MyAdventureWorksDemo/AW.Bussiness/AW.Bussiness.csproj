@@ -59,6 +59,8 @@
     <Compile Include="Employee\EmployeeManager.cs" />
     <Compile Include="Employee\IEmployeeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shift\IShiftManager.cs" />
+    <Compile Include="Shift\ShiftManager.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

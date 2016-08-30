@@ -4,6 +4,7 @@
     using Bussiness.BuildVersion;
     using Bussiness.Customer;
     using Bussiness.Employee;
+    using Bussiness.Shift;
     using DryIoc;
     using DryIoc.WebApi;
     using System.Web.Http;
@@ -16,6 +17,7 @@
             container.Register<IBuildVersionManager, BuildVersionManager>(reuse: Reuse.Singleton, made: Made.Of(() => new BuildVersionManager()));
             container.Register<ICustomerManager>(reuse: Reuse.Singleton, made: Made.Of(() => new CustomerManager()));
             container.Register<IEmployeeManager>(reuse: Reuse.Singleton, made: Made.Of(() => new EmployeeManager()));
+            container.Register<IShiftManager>(reuse: Reuse.Singleton, made: Made.Of(() => new ShiftManager()));
             container.WithWebApi(config);
         }
     }

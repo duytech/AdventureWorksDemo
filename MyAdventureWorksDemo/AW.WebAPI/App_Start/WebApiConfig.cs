@@ -41,6 +41,8 @@
         {
             var builder = new ODataConventionModelBuilder();
             builder.EntitySet<Models.Employee>("Employees");
+            builder.EntitySet<Models.EmployeeDepartmentHistory>("EmployeeDepartmentHistories");
+            builder.EntitySet<Models.Shift>("Shifts");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: "odata",

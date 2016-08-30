@@ -6,6 +6,7 @@
     using DataAccess.Common;
     using DataAccess.Customer;
     using DataAccess.Employee;
+    using DataAccess.Shift;
     using Models.Mapper;
     using Ninject;
     #endregion
@@ -48,6 +49,7 @@
                 kernel.Bind<IBuildVersionRepo>().To<BuildVersionRepo>();
                 kernel.Bind<ICustomerRepo>().To<CustomerRepo>();
                 kernel.Bind<IEmployeeRepo>().To<EmployeeRepo>();
+                kernel.Bind<IShiftRepo>().To<ShiftRepo>();
             }
         }
     }
