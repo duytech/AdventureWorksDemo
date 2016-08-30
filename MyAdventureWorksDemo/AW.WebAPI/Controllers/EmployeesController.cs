@@ -16,7 +16,7 @@
             this.employeeManager = employeeManager;
         }
 
-        //[HttpGet]
+        [HttpGet]
         [EnableQuery(PageSize = 10)]
         public HttpResponseMessage Get()
         {

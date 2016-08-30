@@ -2,7 +2,6 @@
 {
     using AutoMapper;
     using System;
-    using System.Collections;
     using System.Collections.Generic;
 
     public class AWMapperProfile : Profile
@@ -67,8 +66,10 @@
             CreateMap<DataAccess.Entities.Department, Department>()
                 .ReverseMap();
 
-            CreateMap<DataAccess.Entities.Shift, Shift>()
-                .ReverseMap();
+            CreateMap<DataAccess.Entities.Shift, Shift>();
+
+            CreateMap<Shift, DataAccess.Entities.Shift>()
+                .ForMember(dest => dest.ModifiedDate, opt => opt.Ignore()).AfterMap((s, d) => { if (s.ModifiedDate == DateTime.MinValue) d.ModifiedDate = DateTime.Now; });
         }
     }
 }
