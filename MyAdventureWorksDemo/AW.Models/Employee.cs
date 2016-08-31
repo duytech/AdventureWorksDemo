@@ -1,12 +1,16 @@
 ﻿namespace AW.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
 
     public class Employee
     {
         [Key]
+        [DataMember(Name = "Id")]
+        [JsonProperty("Id")]
         public string BusinessEntityID { get; set; }
         public string NationalIDNumber { get; set; }
         public string LoginID { get; set; }

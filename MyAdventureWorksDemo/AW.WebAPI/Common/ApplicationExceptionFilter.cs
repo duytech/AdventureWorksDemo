@@ -14,16 +14,9 @@
             var exception = actionExecutedContext.Exception;
             if (controllerName == "Shifts" || controllerName == "Employees")
             {
-                
                 // OData has its own error response
                 // Need to use System.Web.OData.Extensions.HttpRequestMessageExtensions.CreateErrorResponse method
-                ODataInnerError innerError = new ODataInnerError(exception);
-                ODataError error = new ODataError
-                {
-                    Message = exception.Message,
-                    ErrorCode = "InternalServerError"
-                };
-                actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, error);
+                actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, CommonFunctions.ExceptionToODataError(exception));
             }
             else
             {

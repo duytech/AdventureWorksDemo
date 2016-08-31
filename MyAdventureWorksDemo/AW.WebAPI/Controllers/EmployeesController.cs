@@ -1,5 +1,6 @@
 ﻿namespace AW.WebAPI.Controllers
 {
+    using Attributes;
     using Bussiness.Employee;
     using System.Linq;
     using System.Net;
@@ -21,6 +22,13 @@
         public HttpResponseMessage Get()
         {
             return Request.CreateResponse(HttpStatusCode.OK, employeeManager.Search().ToList());
+        }
+
+        [HttpPost]
+        [ValidateModel]
+        public HttpResponseMessage Post(Models.Employee employee)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

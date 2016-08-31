@@ -5,6 +5,8 @@
     {
         IQueryable<Models.Shift> Search();
 
-        Models.Shift Save(Models.Shift shift);
+        Models.Shift GetById(int id);
+
+        Models.Shift Save(Models.Shift shift, out string error);
     }
 }

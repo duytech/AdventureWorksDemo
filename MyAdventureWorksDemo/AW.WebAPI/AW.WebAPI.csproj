@@ -165,10 +165,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ValidateModelAttribute.cs" />
     <Compile Include="Common\ApplicationExceptionHandler.cs" />
     <Compile Include="App_Start\DependencyInjectionConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\ApplicationExceptionFilter.cs" />
+    <Compile Include="Common\CommonFunctions.cs" />
     <Compile Include="Common\CustomHttpActionResult.cs" />
     <Compile Include="Common\Odata\CustomSerializer\AppODataEntityTypeSerializer.cs" />
     <Compile Include="Common\Odata\CustomSerializer\AppODataSerializerProvider.cs" />

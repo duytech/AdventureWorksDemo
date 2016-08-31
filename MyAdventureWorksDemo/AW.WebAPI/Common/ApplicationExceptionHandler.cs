@@ -11,9 +11,7 @@
         {
             var result = new HttpResponseMessage(HttpStatusCode.InternalServerError)
             {
-                Content = new StringContent(context.Exception.Message),
-                ReasonPhrase = "Oops! Sorry! Something went wrong." +
-                      "Please contact email@address.com so we can try to fix it."
+                Content = new StringContent(context.Exception.Message)
             };
 
             context.Result = new CustomHttpActionResult(context.Request, result);
