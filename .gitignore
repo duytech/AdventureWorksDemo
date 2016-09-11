@@ -11,3 +11,7 @@ MyAdventureWorksDemo/.vs/
 MyAdventureWorksDemo/AW.WebAPI/AW.WebAPI.csproj.user
 MyAdventureWorksDemo/AW.Models/obj/Debug/
 MyAdventureWorksDemo/AW.Models/bin/Debug/
+MyAdventureWorksDemo/AW.Web/bin/
+MyAdventureWorksDemo/AW.Web/obj/Debug/
+MyAdventureWorksDemo/AW.Tests/obj/Debug/
+MyAdventureWorksDemo/AW.Tests/bin/Debug/
