@@ -5,6 +5,7 @@
     using Newtonsoft.Json.Serialization;
     using System.Net.Http;
     using System.Web.Http;
+    using System.Web.Http.Cors;
     using System.Web.Http.ExceptionHandling;
     using System.Web.OData.Builder;
     using System.Web.OData.Extensions;
@@ -20,6 +21,10 @@
 
         private static void WebApiRegister(HttpConfiguration config)
         {
+            // support cors request
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             // Add exception filter to catch all exception occur in action method
             config.Filters.Add(new ApplicationExceptionFilter());
 

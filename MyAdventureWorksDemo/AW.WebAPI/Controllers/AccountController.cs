@@ -15,7 +15,6 @@
 
     public class AccountController : ApiController
     {
-        [Route("api/account/login")]
         [HttpPost]
         public HttpResponseMessage Login(LoginViewModel login)
         {
