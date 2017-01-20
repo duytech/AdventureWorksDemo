@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AW.Tests", "AW.Tests\AW.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AW.Web", "AW.Web\AW.Web.csproj", "{53DAB79D-0677-433A-A71A-508AAC1E494D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AW.NancyfxAPI", "AW.NancyfxAPI\AW.NancyfxAPI.csproj", "{DBEEA30D-AE87-471D-9678-8A504081517A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{53DAB79D-0677-433A-A71A-508AAC1E494D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53DAB79D-0677-433A-A71A-508AAC1E494D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53DAB79D-0677-433A-A71A-508AAC1E494D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBEEA30D-AE87-471D-9678-8A504081517A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEEA30D-AE87-471D-9678-8A504081517A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEEA30D-AE87-471D-9678-8A504081517A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEEA30D-AE87-471D-9678-8A504081517A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
